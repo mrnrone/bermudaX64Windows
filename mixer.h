@@ -12,21 +12,21 @@ struct File;
 struct SystemStub;
 
 struct Mixer {
-	static const int kDefaultSoundId = -1;
+    static const int kDefaultSoundId = -1;
 
-	Mixer() {}
-	virtual ~Mixer() {}
+    Mixer() {}
+    virtual ~Mixer() {}
 
-	virtual void open() = 0;
-	virtual void close() = 0;
+    virtual void open() = 0;
+    virtual void close() = 0;
 
-	virtual void playSound(File *f, int *id) = 0;
-	virtual void playMusic(File *f, int *id) = 0;
-	virtual bool isSoundPlaying(int id) = 0;
-	virtual void stopSound(int id) = 0;
-	virtual void stopAll() = 0;
+    virtual void playSound(File *f, int *id) = 0;
+    virtual void playMusic(File *f, int *id) = 0;
+    virtual bool isSoundPlaying(int id) = 0;
+    virtual void stopSound(int id) = 0;
+    virtual void stopAll() = 0;
 
-	virtual void setMusicMix(void *param, void (*mix)(void *, uint8_t *, int)) = 0;
+    virtual void setMusicMix(void *param, void (*mix)(void *, uint8_t *, int)) = 0;
 };
 
 Mixer *Mixer_SDL_create(SystemStub *);

@@ -1,3 +1,43 @@
+Bermuda Syndrome x64 README
+Release version: 0.0.1
+-------------------------------------------------------------------------------
+
+In this fork the code has been updated in order to able to build and run this amazing game on 64-bits Windows in 2023!
+During the update I used Windows 10 with Visual Studio 2019.
+
+The following dependecies have been added to the repository:
+
+- 'SDL', 'SDL mixer', 'libvorbis' and 'ogg' have been added via nuget packages. (see packages directory)
+- 'libretro' has been added in libretro-common-master directory.
+- Some missing header files have been added (by default not available on Windows).
+
+1.How to build?
+
+Run Visual Studio 2019 (or higher)
+Open the solution file (it might be necessary to change Windows SDK version and Platform toolset)
+Choose your preferred build type debug/release
+Build.
+
+2. After successful build
+
+You have to copy from x64\[Debug|Release] diectory the following 3 files into
+the root directory of your original game:
+
+bermudax64.exe
+SDL2.dll
+SDL2_mixer.dll
+
+3. Run the game from the console via the following command:
+
+bermudax64.exe --datapath=.\
+
+4. Save/restore game
+
+It's recommended to check console output which slot is selected (use +/- keys) before 
+save or restore :)
+
+-------------------------------------------------------------------------------
+
 
 Bermuda Syndrome README
 Release version: 0.1.7
