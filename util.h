@@ -9,13 +9,13 @@
 #include "intern.h"
 
 enum {
-	DBG_INFO     = 1 << 0,
-	DBG_GAME     = 1 << 1,
-	DBG_OPCODES  = 1 << 2,
-	DBG_RES      = 1 << 3,
-	DBG_DIALOGUE = 1 << 4,
-	DBG_MIXER    = 1 << 5,
-	DBG_WIN16    = 1 << 6
+    DBG_INFO     = 1 << 0,
+    DBG_GAME     = 1 << 1,
+    DBG_OPCODES  = 1 << 2,
+    DBG_RES      = 1 << 3,
+    DBG_DIALOGUE = 1 << 4,
+    DBG_MIXER    = 1 << 5,
+    DBG_WIN16    = 1 << 6
 };
 
 extern uint16_t g_debugMask;

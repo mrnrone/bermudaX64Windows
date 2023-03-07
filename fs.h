@@ -8,39 +8,41 @@
 
 #include "intern.h"
 
+#define MAX_FILE_PATH_LENGTH 2048
+
 struct File;
 struct FileSystem_impl;
 
 struct FileSystem {
-	FileSystem(const char *dataPath);
-	~FileSystem();
+    FileSystem(const char *dataPath);
+    ~FileSystem();
 
-	File *openFile(const char *path, bool errorIfNotFound = true);
-	void closeFile(File *f);
+    File *openFile(const char *path, bool errorIfNotFound = true);
+    void closeFile(File *f);
 
-	bool existFile(const char *path);
+    bool existFile(const char *path);
 
-	FileSystem_impl *_impl;
-	bool _romfs;
+    FileSystem_impl *_impl;
+    bool _romfs;
 };
 
 struct FileHolder {
-	FileHolder(FileSystem &fs, const char *path, bool errorIfNotFound = true)
-		: _fs(fs) {
-		_fp = _fs.openFile(path, errorIfNotFound);
-	}
+    FileHolder(FileSystem &fs, const char *path, bool errorIfNotFound = true)
+        : _fs(fs) {
+        _fp = _fs.openFile(path, errorIfNotFound);
+    }
 
-	~FileHolder() {
-		_fs.closeFile(_fp);
-		_fp = 0;
-	}
+    ~FileHolder() {
+        _fs.closeFile(_fp);
+        _fp = 0;
+    }
 
-	File *operator->() {
-		return _fp;
-	}
+    File *operator->() {
+        return _fp;
+    }
 
-	FileSystem &_fs;
-	File *_fp;
+    FileSystem &_fs;
+    File *_fp;
 };
 
 #endif // FS_H__
