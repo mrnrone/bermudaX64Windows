@@ -5,7 +5,7 @@ Release version: 0.0.1
 In this fork the code has been updated in order to able to build and run this amazing game on 64-bits Windows in 2023!
 During the update I used Windows 10 with Visual Studio 2019.
 
-The following dependecies have been added to the repository:
+The following dependencies have been added to the repository:
 
 - 'SDL', 'SDL mixer', 'libvorbis' and 'ogg' have been added via nuget packages. (see packages directory)
 - 'libretro' has been added in libretro-common-master directory.
