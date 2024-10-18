@@ -326,7 +326,7 @@ void Game::loadMOV(const char *fileName) {
                 for (int i = 0; i < _sceneObjectsCount; ++i) {
                     if (strcmp(_sceneObjectsTable[i].name, so->name) == 0) {
                         
-                        // Fix shoow menu after restor
+                        // Fix show menu after restore
                         // error("Duplicate object name %s", so->name);
                         isAlreadyExisting = true;
                     }
